@@ -1,0 +1,28 @@
+
+.buttons__button {
+    color: teal;
+    margin: -4px 0px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;    
+}
+
+.buttons__button:hover {
+    color: hsl(180, 100%, 35%);
+}
+
+.buttons__button:disabled {
+    color: rgb(205, 205, 205)
+}
+
+@media(max-width: 767px) {
+   
+    .buttons__button {
+          display: flex;
+          flex-basis: 100%;
+          flex-wrap: wrap;
+          justify-content: center;
+    }
+    
+}
