@@ -31,7 +31,6 @@ function App() {
                 body={<Tasks tasks={tasks} hideDoneTask={hideDoneTask} />}
                 extraHeaderContent={<Buttons tasks={tasks} hideDoneTask={hideDoneTask} />}
             />
-
         </Container>
     );
 }
