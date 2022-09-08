@@ -24,8 +24,7 @@
 @media(max-width: 767px) {
     .section__header{
         grid-template-columns: 1fr;
-    }
-        
+    }   
 }
 
 .section__title {

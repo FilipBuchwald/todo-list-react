@@ -25,6 +25,9 @@
     .form__button:hover {
         transform: none;
     }
+    .form {
+        grid-template-columns: 1fr;
+  }
 }
 
 .form__input {
@@ -35,11 +38,4 @@
 
 .form__input::placeholder {
     color: rgb(179, 176, 176);
-}
-
-@media(max-width: 767px) {
-    .form {
-          grid-template-columns: 1fr;
-    }
-    
 }

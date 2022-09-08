@@ -12,7 +12,6 @@ const Section = ({ title, body, extraHeaderContent }) => (
         <div className="section__item">
             {body}
         </div>
-
     </section>
 );
 

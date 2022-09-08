@@ -1,5 +1,5 @@
 
-import "./style.css"
+import "./style.css";
 
 const Buttons = ({ tasks, hideDoneTask }) => (
     tasks.length > 0 && (
@@ -15,7 +15,6 @@ const Buttons = ({ tasks, hideDoneTask }) => (
             </button>
         </div>
     )
-
 );
 
-export default Buttons
+export default Buttons;
