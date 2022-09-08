@@ -33,35 +33,43 @@ function App() {
         }));
     };
 
-    
+    const setAllDone = () => {
+        setTasks(tasks => tasks.map(task => ({
+            ...task,
+            done: true,
+        })));
+    };
 
-return (
-    <Container>
-        <Header
-            title="Lista zadań"
-        />
-        <Section
-            title="Dodaj nowe zadanie"
-            body={<Form />}
-        />
-        <Section
-            title="Lista zadań"
-            body={
-                <Tasks
-                    tasks={tasks}
-                    hideDone={hideDone}
-                    removeTask={removeTask}
-                    toggleTaskDone={toggleTaskDone}
-                />}
-            extraHeaderContent={
-                <Buttons
-                    tasks={tasks}
-                    hideDone={hideDone}
-                    toggleHideDone={toggleHideDone}
-                />}
-        />
-    </Container>
-);
+
+
+    return (
+        <Container>
+            <Header
+                title="Lista zadań"
+            />
+            <Section
+                title="Dodaj nowe zadanie"
+                body={<Form />}
+            />
+            <Section
+                title="Lista zadań"
+                body={
+                    <Tasks
+                        tasks={tasks}
+                        hideDone={hideDone}
+                        removeTask={removeTask}
+                        toggleTaskDone={toggleTaskDone}
+                    />}
+                extraHeaderContent={
+                    <Buttons
+                        tasks={tasks}
+                        hideDone={hideDone}
+                        toggleHideDone={toggleHideDone}
+                        setAllDone={setAllDone}
+                    />}
+            />
+        </Container>
+    );
 }
 
 export default App;
