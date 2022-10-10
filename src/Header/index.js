@@ -1,12 +1,15 @@
+import styled from "styled-components";
 
-import "./style.css";
+const StyledHeader = styled.h1`
+    font-size: 25px;
+    font-weight: 900;
+    margin: 20px 10px 10px;
+`;
 
 const Header = ({ title }) => (
-    <header>
-        <h1 className="header">
-            {title}
-        </h1>
-    </header>
+    <StyledHeader>
+        {title}
+    </StyledHeader>
 );
 
 export default Header;
