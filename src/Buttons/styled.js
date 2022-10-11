@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+`;
 
 export const Button = styled.button`
     color: teal;
