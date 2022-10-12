@@ -34,20 +34,20 @@ export const Button = styled.button`
     cursor: pointer;
 
     ${({ toggleDone }) => toggleDone && css`
-        background-color: green;
-        color: #eee;
+        background-color: ${({theme}) => theme.color.green};
+        color: ${({theme}) => theme.color.white};
 
         &:hover {
-            background-color: hsl(120, 100%, 35%);
+            filter:brightness(120%);
         }
     `}
 
     ${({ remove }) => remove && css`
-        background-color: crimson;
-        color: #eee;
+        background-color: ${({theme}) => theme.color.crimson};
+        color: ${({theme}) => theme.color.white};
 
         &:hover {
-            background-color: hsl(348, 83%, 57%);
+            filter: brightness(120%);
         }
     `}
 `;

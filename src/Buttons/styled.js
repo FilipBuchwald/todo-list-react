@@ -6,19 +6,19 @@ export const Wrapper = styled.div`
 `;
 
 export const Button = styled.button`
-    color: teal;
-    margin: -4px 0px;
+    color: ${({ theme }) => theme.color.teal};
     padding: 10px;
     cursor: pointer;
     border: none;
     background-color: transparent;    
 
     &:hover {
-    color: hsl(180, 100%, 35%);
+        filter: brightness(120%);
     }
 
     &:disabled {
-    color: rgb(205, 205, 205)
+        color: ${({ theme }) => theme.color.silver};
+        filter: none;
     }
 
     @media(max-width: 767px) {

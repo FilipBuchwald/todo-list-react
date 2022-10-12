@@ -5,7 +5,7 @@ export const StyledForm = styled.form`
     grid-template-columns: 1fr auto;
     align-items: center;
 
-    @media(max-width: 767px) {
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         grid-template-columns: 1fr;
   }
 `;
@@ -16,13 +16,13 @@ export const Input = styled.input`
     border: 1px solid #ddd;
 
     &::placeholder{
-        color: rgb(179, 176, 176);
+        color: ${({ theme }) => theme.color.silver};
     }
 `;
 
 export const Button = styled.button`
-    background: teal;
-    color: white;
+    background: ${({ theme }) => theme.color.teal};
+    color: ${({ theme }) => theme.color.white};
     padding: 10px;
     font-size: 15px;
     border: none;
@@ -31,10 +31,10 @@ export const Button = styled.button`
     cursor: pointer;
 
     &:hover {
-    transform: scale(1.1);
-    background: hsl(180, 100%, 30%);
+        transform: scale(1.1);
+        filter: brightness(120%);
 
-    @media(max-width: 767px) {
+    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
         transform: none;
     }}
 `;
