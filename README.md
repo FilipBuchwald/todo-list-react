@@ -1,5 +1,5 @@
 # ToDo-List-React
-
+![ToDoList](https://i.postimg.cc/TPDTsLDq/todogif.gif)
 ## Preview site
 [Click Here](https://filipbuchwald.github.io/todo-list-react/) 👀
 
