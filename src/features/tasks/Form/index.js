@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addTask } from "../tasksSlice";
 import { StyledForm, Input, Button } from "./styled";
 
-const Form = ({ addNewTask }) => {
+const Form = () => {
     const [newTaskContent, setNewTaskContent] = useState("");
     const inputRef = useRef(null);
     
@@ -23,12 +23,10 @@ const Form = ({ addNewTask }) => {
             content: newTaskContent.trim(),
             done : false,
             id : nanoid(),
-        }))
+        }));
 
-        // addNewTask(newTaskContent.trim());
         setNewTaskContent("");
     };
-
 
     return (
         <StyledForm onSubmit={onFormSubmit}>
