@@ -4,8 +4,8 @@ import { getTasksFromLocalStorage } from "./tasksLocalStorage";
 const tasksSlice = createSlice({
   name: 'tasks',
   initialState: {
-    // tasks: getTasksFromLocalStorage(),
-    tasks: [],
+    tasks: getTasksFromLocalStorage(),
+    // tasks: [],
     hideDone: false,
   },
   reducers: {
@@ -19,8 +19,8 @@ const tasksSlice = createSlice({
       const index = tasks.findIndex(task => task.id === taskId);
       tasks[index].done = !tasks[index].done;
     },
-    setAllDone: (state) => {
-      for (const task of state.tasks) {
+    setAllDone: ({tasks}) => {
+      for (const task of tasks) {
         task.done = true;
       }
     },
@@ -35,8 +35,20 @@ const tasksSlice = createSlice({
   },
 });
 
-export const { addTask, toggleHideDone, toggleTaskDone, setAllDone, removeTask, fetchExampleTasks, setTasks } = tasksSlice.actions;
-export const selectTasks = state => state.tasks;
+export const { addTask,
+  toggleHideDone,
+  toggleTaskDone,
+  setAllDone,
+  removeTask,
+  fetchExampleTasks,
+  setTasks,
+} = tasksSlice.actions;
+
+const selectTasksState = state => state.tasks;
+
+export const selectTasks = state => selectTasksState(state).tasks;
 export const selectHideDone = state => selectTasks(state).hideDone;
+export const selectAreTasksEmpty = state => selectTasks(state).length === 0;
+export const selectIsEveryTaskDone = state => selectTasks(state).every(({ done }) => done);
 
 export default tasksSlice.reducer;
