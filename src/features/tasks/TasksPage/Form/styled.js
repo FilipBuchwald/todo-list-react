@@ -10,15 +10,15 @@ export const StyledForm = styled.form`
   }
 `;
 
-export const Input = styled.input`
-    padding: 10px;
-    margin: 5px 10px;
-    border: 1px solid #ddd;
+// export const Input = styled.input`
+//     padding: 10px;
+//     margin: 5px 10px;
+//     border: 1px solid #ddd;
 
-    &::placeholder{
-        color: ${({ theme }) => theme.color.silver};
-    }
-`;
+//     &::placeholder{
+//         color: ${({ theme }) => theme.color.silver};
+//     }
+// `;
 
 export const Button = styled.button`
     background: ${({ theme }) => theme.color.teal};
