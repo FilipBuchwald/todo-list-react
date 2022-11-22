@@ -1,25 +1,30 @@
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
-import Author from "./features/author/Author";
-import Tasks from "./features/tasks/Tasks";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import AuthorPage from "./features/author/AuthorPage";
+import TaskPage from "./features/tasks/TaskPage";
+import TasksPage from "./features/tasks/TasksPage";
+import { StyledNavLink } from "./styled";
 
 const App = () => (
   <BrowserRouter>
     <nav>
       <ul>
         <li>
-          <Link to="/zadania">
+          <StyledNavLink to="/zadania">
             Zadania
-          </Link>
+          </StyledNavLink>
         </li>
         <li>
-          <Link to="/author">
+          <StyledNavLink to="/author">
             O autorze
-          </Link>
+          </StyledNavLink>
         </li>
       </ul>
       <Routes>
-        <Route path="/zadania" element={<Tasks />} />
-        <Route path="/author" element={<Author />} />
+        <Route path="/zadania/:id" element={<TaskPage />} />
+        <Route path="/zadania" element={<TasksPage />} />
+        <Route path="/author" element={<AuthorPage />} />
+        <Route path="/todo-list-react" element={<Navigate replace to="/zadania" />}>
+        </Route>
       </Routes>
     </nav>
   </BrowserRouter>
