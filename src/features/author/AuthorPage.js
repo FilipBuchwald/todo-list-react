@@ -9,7 +9,11 @@ const Author = () => (
     />
     <Section
       title="Filip Buchwald"
-      body={<>Test</>}
+      body={<>I graduated from automation and robotics, but during my
+        studies I became interested in programming. Currently, I
+        find myself best in frontend technologies such as React.
+        Now I am motivated to develop my career as a frontend
+        developer.</>}
     />
   </Container>
 );
