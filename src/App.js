@@ -2,23 +2,23 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import AuthorPage from "./features/author/AuthorPage";
 import TaskPage from "./features/tasks/TaskPage";
 import TasksPage from "./features/tasks/TasksPage";
-import { StyledNavLink } from "./styled";
+import { Li, StyledNavLink, Ul } from "./styled";
 
 const App = () => (
   <BrowserRouter>
     <nav>
-      <ul>
-        <li>
+      <Ul>
+        <Li>
           <StyledNavLink to="/zadania">
             Zadania
           </StyledNavLink>
-        </li>
-        <li>
+        </Li>
+        <Li>
           <StyledNavLink to="/author">
             O autorze
           </StyledNavLink>
-        </li>
-      </ul>
+        </Li>
+      </Ul>
       <Routes>
         <Route path="/zadania/:id" element={<TaskPage />} />
         <Route path="/zadania" element={<TasksPage />} />
