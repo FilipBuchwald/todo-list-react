@@ -11,9 +11,7 @@ const Buttons = () => {
   const dispatch = useDispatch();
   return (
     <Wrapper>
-      {/* <Button onClick={() => dispatch(fetchExampleTasks())}>
-        Pobierz przykładowe zazdania
-      </Button> */}
+     
       {!areTasksEmpty && (
         <>
           <Button onClick={() => dispatch(toggleHideDone())}>
