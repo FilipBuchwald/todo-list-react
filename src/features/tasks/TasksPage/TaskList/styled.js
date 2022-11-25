@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const List = styled.ul`
@@ -34,8 +35,8 @@ export const Button = styled.button`
     cursor: pointer;
 
     ${({ toggleDone }) => toggleDone && css`
-        background-color: ${({theme}) => theme.color.green};
-        color: ${({theme}) => theme.color.white};
+        background-color: ${({ theme }) => theme.color.green};
+        color: ${({ theme }) => theme.color.white};
 
         &:hover {
             filter:brightness(120%);
@@ -43,11 +44,16 @@ export const Button = styled.button`
     `}
 
     ${({ remove }) => remove && css`
-        background-color: ${({theme}) => theme.color.crimson};
-        color: ${({theme}) => theme.color.white};
+        background-color: ${({ theme }) => theme.color.crimson};
+        color: ${({ theme }) => theme.color.white};
 
         &:hover {
             filter: brightness(120%);
         }
     `}
+`;
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: ${({theme}) => theme.color.black};
 `;

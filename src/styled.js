@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
-  color: white;
+  color: ${({ theme }) => theme.color.white};
   font-size: 14px;
   &.active {
     font-weight: bold;
@@ -13,7 +13,7 @@ export const StyledNavLink = styled(NavLink)`
 export const Ul = styled.ul`
   display: flex;
   justify-content: center;
-  background-color: teal;
+  background-color: ${({ theme }) => theme.color.teal};
   padding: 10px;
   margin: 0px;
 `;
