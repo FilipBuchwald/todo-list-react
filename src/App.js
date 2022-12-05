@@ -23,7 +23,7 @@ const App = () => (
         <Route path="/zadania/:id" element={<TaskPage />} />
         <Route path="/zadania" element={<TasksPage />} />
         <Route path="/author" element={<AuthorPage />} />
-        <Route path="/todo-list-react" element={<Navigate replace to="/zadania" />}>
+        <Route path="*" element={<Navigate replace to="/zadania" />}>
         </Route>
       </Routes>
     </nav>
