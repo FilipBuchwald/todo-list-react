@@ -1,24 +1,19 @@
-import { useLocation, useNavigate } from "react-router-dom";
 import Input from "../../Input";
+import { useQueryParameter, useReplaceQueryParameter } from "../queryParameters";
 import searchQueryParamName from "../searchQueryParamName";
 import { Wrapper } from "./styled";
 
 const Search = () => {
-  const location = useLocation();
-  const history = useNavigate();
-  const query = (new URLSearchParams(location.search)).get(searchQueryParamName);
+  const query = useQueryParameter(searchQueryParamName);
+  const replaceQueryParameter = useReplaceQueryParameter();
 
   const onInputChange = ({ target }) => {
-    const searchParams = new URLSearchParams(location.search);
 
-    if (target.value.trim() === "") {
-      searchParams.delete(searchQueryParamName);
-    } else {
-      searchParams.set(searchQueryParamName, target.value)
-    }
-
-    history(`${location.pathname}?${searchParams.toString()}`);
-  }
+    replaceQueryParameter({
+      key: searchQueryParamName,
+      value: target.value.trim() 
+    })
+  };
 
   return (
     <Wrapper>
