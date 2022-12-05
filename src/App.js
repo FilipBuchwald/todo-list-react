@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, HashRouter } from "react-router-dom";
 import AuthorPage from "./features/author/AuthorPage";
 import TaskPage from "./features/tasks/TaskPage";
 import TasksPage from "./features/tasks/TasksPage";
 import { Li, StyledNavLink, Ul } from "./styled";
 
 const App = () => (
-  <BrowserRouter>
+  <HashRouter>
     <nav>
       <Ul>
         <Li>
@@ -27,7 +27,7 @@ const App = () => (
         </Route>
       </Routes>
     </nav>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 export default App;
