@@ -54,7 +54,7 @@ export const { addTask,
 const selectTasksState = state => state.tasks;
 
 export const selectTasks = state => selectTasksState(state).tasks;
-export const selectHideDone = state => selectTasks(state).hideDone;
+export const selectHideDone = state => selectTasksState(state).hideDone;
 export const selectAreTasksEmpty = state => selectTasks(state).length === 0;
 export const selectIsEveryTaskDone = state => selectTasks(state).every(({ done }) => done);
 
@@ -70,6 +70,6 @@ export const selectTaskByQuery = (state, query) => {
     content.toUpperCase().includes(query.trim().toUpperCase()));
 }
 
-export const selectLoading = state => selectTasks(state).loading === true;
+export const selectLoading = state => selectTasksState(state).loading;
 
 export default tasksSlice.reducer;
